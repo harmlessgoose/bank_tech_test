@@ -2,17 +2,17 @@
 
 After running Node, you can interact with the bank using the following commands:
 
-## Setup
+### Setup
 `const Bank = require('./bank');`
 `const bank = new Bank();`
 
-## Deposit money
+### Deposit money
 `bank.deposit(10,"test date 1")`
 
-## Withdraw money
+### Withdraw money
 `bank.withdraw(10, "test date 2")`
 
-## Print all transactions
+### Print all transactions
 `bank.printTransactions()`
 
 # Tests
