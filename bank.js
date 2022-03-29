@@ -8,22 +8,22 @@ class Bank {
 
   getBalance() {
     return this.balance;
-  };
+  }
 
   recordTransaction(date, credit, debit, balance) {
     const transaction = new Transaction(date, credit, debit, balance);
     this.transactions.push(transaction);
-  };
+  }
 
   deposit(money, date) {
     this.balance += money;
     this.recordTransaction(date, money, null, this.balance);
-  };
+  }
 
   withdraw(money, date) {
     this.balance -= money;
     this.recordTransaction(date, null, money, this.balance);
-  };
+  }
 
   formatOutput(transaction) {
     let output = "";
@@ -42,12 +42,16 @@ class Bank {
     output += " || ";
 
     output += transaction.balance;
-    console.log(output);
+    return output;
   }
 
-  printTransactions() {   
-    console.log("date || credit || debit || balance") 
-    this.transactions.slice().reverse().forEach(transaction => this.formatOutput(transaction));
+  printTransactions() {
+    console.log("date || credit || debit || balance")
+    console.log(
+      this.transactions.slice().reverse().forEach(
+        transaction => this.formatOutput(transaction)
+      )
+    );
   }
 
 }

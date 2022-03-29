@@ -34,6 +34,12 @@ describe("bank", () => {
     )
   });
 
+  it("formats the right output", () => {
+    const bank = new Bank();
+    bank.deposit(100, "01/02/2022");
+    expect(bank.formatOutput(bank.transactions[0])).toBe("01/02/2022 || 100 ||  || 100");
+  });
+
   // I have been unable to make the following test work correctly,
   // there doesn't seem to be an easy way to check what a function
   // prints to console.log
